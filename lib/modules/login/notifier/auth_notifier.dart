@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:voco/modules/login/controller/login_controller.dart';
 import '../../users/view/users_view.dart';
+
 
 class Auth extends ChangeNotifier {
   bool isLoading = false;
@@ -27,5 +27,12 @@ class Auth extends ChangeNotifier {
         );
       }
     });
+  }
+
+  Future<bool> logout() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    await preferences.remove("token");
+    token = null;
+    return true;
   }
 }

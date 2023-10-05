@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../users/components/register_tile.dart';
 import '../components/form_button.dart';
 import '../components/input_field.dart';
 import '../components/page_header.dart';
@@ -105,31 +106,7 @@ class LoginPage extends ConsumerWidget {
                         const SizedBox(
                           height: 18,
                         ),
-                        SizedBox(
-                          width: size.width * 0.8,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Text(
-                                'Hesabınız yok mu? ',
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    color: Color(0xff939393),
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              GestureDetector(
-                                onTap: () => {},
-                                child: const Text(
-                                  'Kayıt Ol',
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      color: Color(0xff748288),
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        RegisterTile(size: size),
                         const SizedBox(
                           height: 20,
                         ),
@@ -145,3 +122,4 @@ class LoginPage extends ConsumerWidget {
     );
   }
 }
+
